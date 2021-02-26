@@ -21,3 +21,14 @@ export type TrustedEventMap = {
 };
 
 export type TrustedEvent = keyof TrustedEventMap;
+
+export enum CurrentMoods {
+  Cool = "cool",
+  Dolla = "dolla",
+  Fire = "fire",
+  Heart = "heart",
+  Majick = "majick",
+  PewPew = "pewpew",
+  Sad = "sad",
+  Star = "star",
+}

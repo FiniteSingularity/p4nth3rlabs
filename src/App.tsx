@@ -10,6 +10,7 @@ import Webcam from "./components/webcam";
 import Giveaway from "./components/giveaway";
 import { GlobalStyle } from "./styles";
 import { WebSocketPacket } from "p4nth3rb0t-types";
+import { CurrentMoods } from "./types";
 
 interface AppProps {
   uri: string | undefined;
@@ -42,6 +43,7 @@ function App(props: AppProps) {
     alerts: [],
     giveawayEntries: [],
     giveawayInProgress: false,
+    currentMood: CurrentMoods.Majick,
   };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);

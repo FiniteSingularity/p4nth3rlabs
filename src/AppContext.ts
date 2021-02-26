@@ -32,6 +32,7 @@ export interface AppState {
   alerts: AlertQueueEvent[];
   giveawayEntries: EnterGiveawayPacket[];
   giveawayInProgress: boolean;
+  currentMood: string;
 }
 
 interface AppContextProps {

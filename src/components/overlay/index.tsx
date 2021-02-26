@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import Icon from './TextBoxIcons';
+import React, { useEffect, useState, useContext } from "react";
+import AppContext from "../../AppContext";
+import Icon from "./TextBoxIcons";
 import {
   FooterContainer,
   TextBox,
@@ -14,15 +15,18 @@ import {
   HeartPantherContainer,
   MajickPantherContainer,
   PewPewPantherContainer,
-} from './index.style';
+  CurrentMoodContainer,
+} from "./index.style";
 
-import HeartPanther from './svg/HeartPanther';
-import MajickPanther from './svg/MajickPanther';
-import PewPewPanther from './svg/PewPewPanther';
-import PewCoin from './svg/PewCoin';
-import Fire from './svg/Fire';
-import Lightening from './svg/Lightening';
-import ExtraStars from './svg/ExtraStars';
+import HeartPanther from "./svg/HeartPanther";
+import MajickPanther from "./svg/MajickPanther";
+import PewPewPanther from "./svg/PewPewPanther";
+import PewCoin from "./svg/PewCoin";
+import Fire from "./svg/Fire";
+import Lightening from "./svg/Lightening";
+import ExtraStars from "./svg/ExtraStars";
+
+import CurrentMood from "./CurrentMood";
 
 interface OverlayProps {}
 
@@ -34,28 +38,30 @@ interface TextBoxOption {
 
 const textBoxOptions: TextBoxOption[] = [
   {
-    text: 'Build stuff, learn things, love what you do',
-    iconName: 'lightening',
-    type: 'slogan',
+    text: "Build stuff, learn things, love what you do",
+    iconName: "lightening",
+    type: "slogan",
   },
   {
-    text: '!twitter - @whitep4nth3r',
-    iconName: 'twitter',
-    type: 'twitter',
+    text: "!twitter - @whitep4nth3r",
+    iconName: "twitter",
+    type: "twitter",
   },
   {
-    text: '!discord - Join our Discord community',
-    iconName: 'discord',
-    type: 'discord',
+    text: "!discord - Join our Discord community",
+    iconName: "discord",
+    type: "discord",
   },
   {
-    text: '!github - Find stream projects on github',
-    iconName: 'github',
-    type: 'github',
+    text: "!github - Find stream projects on github",
+    iconName: "github",
+    type: "github",
   },
 ];
 
 export default function Overlay(props: OverlayProps) {
+  const { state } = useContext(AppContext);
+  const { currentMood } = state;
   const [textBoxCurrentKey, setTextBoxCurrentKey] = useState(0);
   const [textBox, setTextBox] = useState(textBoxOptions[textBoxCurrentKey]);
   const atEndOfOptions = textBoxCurrentKey + 1 > textBoxOptions.length - 1;
@@ -94,7 +100,7 @@ export default function Overlay(props: OverlayProps) {
         }}
         transition={{
           duration: 4,
-          ease: 'easeInOut',
+          ease: "easeInOut",
           times: [0, 0.5, 1],
           loop: Infinity,
         }}
@@ -109,7 +115,7 @@ export default function Overlay(props: OverlayProps) {
         }}
         transition={{
           duration: 8,
-          ease: 'easeInOut',
+          ease: "easeInOut",
           times: [0, 0.5, 1],
           loop: Infinity,
         }}
@@ -124,7 +130,7 @@ export default function Overlay(props: OverlayProps) {
         }}
         transition={{
           duration: 5,
-          ease: 'easeInOut',
+          ease: "easeInOut",
           times: [0, 0.5, 1],
           loop: Infinity,
         }}
@@ -140,6 +146,10 @@ export default function Overlay(props: OverlayProps) {
         </TextBox>
         <TextBoxRight />
       </TextBoxContainer>
+
+      <CurrentMoodContainer>
+        <CurrentMood mood={currentMood} />
+      </CurrentMoodContainer>
     </FooterContainer>
   );
 }

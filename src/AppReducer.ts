@@ -43,6 +43,9 @@ export default function AppReducer(state: AppState, action: AllActions) {
     case MainframeEvent.enterGiveaway:
       newState.giveawayEntries.push(action);
       return { ...newState };
+    case MainframeEvent.moodChange:
+      newState.currentMood = action.data.mood;
+      return { ...newState };
     default:
       return { ...state };
   }
