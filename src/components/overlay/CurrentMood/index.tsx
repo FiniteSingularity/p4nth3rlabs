@@ -1,4 +1,4 @@
-import { PantherContainer, BannerContainer } from "./index.style";
+import { CurrentMoodContainer, PantherContainer, BannerContainer } from "./index.style";
 import { CurrentMoods } from "../../../types";
 
 import Cool from "./svg/Cool";
@@ -38,17 +38,44 @@ function getPantherSvg(mood: string) {
   }
 }
 
+function getAlertAudioUrl(mood: string) {
+  switch (mood) {
+    case CurrentMoods.Cool:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_COOL;
+    case CurrentMoods.Dolla:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_DOLLA;
+    case CurrentMoods.Fire:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_FIRE;
+    case CurrentMoods.Heart:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_HEART;
+    case CurrentMoods.Majick:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_MAJICK;
+    case CurrentMoods.PewPew:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_PEWPEW;
+    case CurrentMoods.Sad:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_SAD;
+    case CurrentMoods.Star:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_STAR;
+    default:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_MAJICK;
+  }
+}
+
 export default function CurrentMood(props: CurrentMoodProps) {
   const { mood } = props;
+  const audioUrl = getAlertAudioUrl(mood);
 
   return (
-    <>
+    <CurrentMoodContainer key={mood}>
+      <audio autoPlay>
+        <source src={audioUrl} type="audio/mp3" />
+      </audio>
       <PantherContainer
         animate={{
-          y: [0, -6, 0],
+          y: [0, -8, 0],
         }}
         transition={{
-          duration: 4,
+          duration: 3,
           ease: "easeInOut",
           times: [0, 0.5, 1],
           loop: Infinity,
@@ -59,6 +86,6 @@ export default function CurrentMood(props: CurrentMoodProps) {
       <BannerContainer>
         <Banner />
       </BannerContainer>
-    </>
+    </CurrentMoodContainer>
   );
 }

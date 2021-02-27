@@ -240,13 +240,6 @@ const PewPewPantherContainer = styled(motion.span)`
   }
 `;
 
-const CurrentMoodContainer = styled.div`
-  width: 200px;
-  position: absolute;
-  right: 24px;
-  bottom: 24px;
-`;
-
 export {
   FooterContainer,
   TextBox,
@@ -261,5 +254,4 @@ export {
   HeartPantherContainer,
   MajickPantherContainer,
   PewPewPantherContainer,
-  CurrentMoodContainer,
 };

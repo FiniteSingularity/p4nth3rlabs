@@ -15,7 +15,6 @@ import {
   HeartPantherContainer,
   MajickPantherContainer,
   PewPewPantherContainer,
-  CurrentMoodContainer,
 } from "./index.style";
 
 import HeartPanther from "./svg/HeartPanther";
@@ -147,9 +146,7 @@ export default function Overlay(props: OverlayProps) {
         <TextBoxRight />
       </TextBoxContainer>
 
-      <CurrentMoodContainer>
-        <CurrentMood mood={currentMood} />
-      </CurrentMoodContainer>
+      <CurrentMood mood={currentMood} />
     </FooterContainer>
   );
 }
