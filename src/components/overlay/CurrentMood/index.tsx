@@ -1,5 +1,5 @@
 import { CurrentMoodContainer, PantherContainer, BannerContainer } from "./index.style";
-import { CurrentMoods } from "../../../types";
+import { CurrentMoods } from "p4nth3rb0t-types";
 
 import Cool from "./svg/Cool";
 import Dolla from "./svg/Dolla";
