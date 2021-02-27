@@ -7,7 +7,7 @@ export default function MajickPanther() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clipPath="url(#clip0)">
+      <g>
         <path
           d="M181.602 595.474L183.429 546.041L141.704 569.821L90.9681 556.787L104.084 604.484L74.5868 643.882L124.238 647.577L153.014 691.56L170.935 642.149L222.151 626.731L181.602 595.474Z"
           fill="#82AF3A"
@@ -327,11 +327,6 @@ export default function MajickPanther() {
           fill="#0F111A"
         />
       </g>
-      <defs>
-        <clipPath id="clip0">
-          <rect width="800" height="800" fill="white" />
-        </clipPath>
-      </defs>
     </svg>
   );
 }

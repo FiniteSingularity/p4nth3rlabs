@@ -7,7 +7,7 @@ export default function PewPewPanther() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clipPath="url(#clip0)">
+      <g>
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -177,9 +177,6 @@ export default function PewPewPanther() {
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feGaussianBlur stdDeviation="8" result="effect1_foregroundBlur" />
         </filter>
-        <clipPath id="clip0">
-          <rect width="800" height="800" fill="white" />
-        </clipPath>
       </defs>
     </svg>
   );

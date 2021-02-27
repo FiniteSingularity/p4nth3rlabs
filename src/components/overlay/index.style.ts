@@ -1,11 +1,11 @@
-import styled, { keyframes, css } from 'styled-components';
-import { motion } from 'framer-motion';
+import styled, { keyframes, css } from "styled-components";
+import { motion } from "framer-motion";
 
 const textBoxWidths = {
-  github: '400px',
-  twitter: '276px',
-  discord: '380px',
-  slogan: '432px',
+  github: "400px",
+  twitter: "276px",
+  discord: "380px",
+  slogan: "432px",
 };
 
 const fadeIn = keyframes`
@@ -16,7 +16,7 @@ const fadeIn = keyframes`
 const FooterContainer = styled.div`
   display: block;
   position: fixed;
-  background-image: url('/assets/footer-bar.png');
+  background-image: url("/assets/footer-bar.png");
   background-size: cover;
   height: 1080px;
   width: 1920px;
@@ -30,13 +30,13 @@ function getWidthFromType(props: TextBoxProps) {
   const { type } = props;
 
   switch (type) {
-    case 'twitter':
+    case "twitter":
       return textBoxWidths.twitter;
-    case 'discord':
+    case "discord":
       return textBoxWidths.discord;
-    case 'github':
+    case "github":
       return textBoxWidths.github;
-    case 'slogan':
+    case "slogan":
       return textBoxWidths.slogan;
   }
 }
@@ -44,22 +44,22 @@ function getWidthFromType(props: TextBoxProps) {
 function getGrowAnimation(props: TextBoxProps) {
   const { type } = props;
   switch (type) {
-    case 'twitter':
+    case "twitter":
       return keyframes`
       from { width: 0; }
       to { width: ${textBoxWidths.twitter}; }
     `;
-    case 'discord':
+    case "discord":
       return keyframes`
       from { width: 0; }
       to { width: ${textBoxWidths.discord}; }
     `;
-    case 'github':
+    case "github":
       return keyframes`
       from { width: 0; }
       to { width: ${textBoxWidths.github}; }
     `;
-    case 'slogan':
+    case "slogan":
       return keyframes`
       from { width: 0; }
       to { width: ${textBoxWidths.slogan}; }
@@ -67,9 +67,9 @@ function getGrowAnimation(props: TextBoxProps) {
   }
 }
 
-const textBoxHeight = '36px';
-const textBoxBorderRadius = '8px';
-const textBoxSideWidth = '12px';
+const textBoxHeight = "36px";
+const textBoxBorderRadius = "8px";
+const textBoxSideWidth = "12px";
 
 const TextBoxContainer = styled.div`
   position: relative;

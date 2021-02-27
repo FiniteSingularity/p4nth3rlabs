@@ -57,6 +57,7 @@ export default class Socket {
       dropEmotes: new Set(),
       weatherTrailEvent: new Set(),
       yeetUser: new Set(),
+      moodChange: new Set(),
     };
   }
 
