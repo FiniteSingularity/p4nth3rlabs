@@ -1,11 +1,12 @@
 export default function Fire() {
   return (
     <svg
+      style={{ width: "100%", height: "100%" }}
       viewBox="0 0 800 800"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0)">
+      <g>
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -195,11 +196,6 @@ export default function Fire() {
           fill="#FFB52B"
         />
       </g>
-      <defs>
-        <clip-path id="clip0">
-          <rect width="800" height="800" fill="white" />
-        </clip-path>
-      </defs>
     </svg>
   );
 }
