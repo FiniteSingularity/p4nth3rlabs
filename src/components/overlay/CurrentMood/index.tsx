@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import AppContext from "../../../AppContext";
 import { CurrentMoodContainer, PantherContainer, BannerContainer } from "./index.style";
 import { CurrentMoods } from "p4nth3rb0t-types";
 
@@ -10,10 +12,6 @@ import PewPew from "./svg/PewPew";
 import Sad from "./svg/Sad";
 import Star from "./svg/Star";
 import Banner from "./svg/Banner";
-
-interface CurrentMoodProps {
-  mood: string;
-}
 
 function getPantherSvg(mood: string) {
   switch (mood) {
@@ -61,12 +59,13 @@ function getAlertAudioUrl(mood: string) {
   }
 }
 
-export default function CurrentMood(props: CurrentMoodProps) {
-  const { mood } = props;
-  const audioUrl = getAlertAudioUrl(mood);
+export default function CurrentMood() {
+  const { state } = useContext(AppContext);
+  const { currentMood } = state;
+  const audioUrl = getAlertAudioUrl(currentMood);
 
   return (
-    <CurrentMoodContainer key={mood}>
+    <CurrentMoodContainer key={`${Math.random()}-${currentMood}`}>
       <audio autoPlay>
         <source src={audioUrl} type="audio/mp3" />
       </audio>
@@ -81,7 +80,7 @@ export default function CurrentMood(props: CurrentMoodProps) {
           loop: Infinity,
         }}
       >
-        {getPantherSvg(mood)}
+        {getPantherSvg(currentMood)}
       </PantherContainer>
       <BannerContainer>
         <Banner />

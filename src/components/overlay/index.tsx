@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useContext } from "react";
-import AppContext from "../../AppContext";
+import React, { useEffect, useState } from "react";
+
 import Icon from "./TextBoxIcons";
 import {
   FooterContainer,
@@ -59,8 +59,6 @@ const textBoxOptions: TextBoxOption[] = [
 ];
 
 export default function Overlay(props: OverlayProps) {
-  const { state } = useContext(AppContext);
-  const { currentMood } = state;
   const [textBoxCurrentKey, setTextBoxCurrentKey] = useState(0);
   const [textBox, setTextBox] = useState(textBoxOptions[textBoxCurrentKey]);
   const atEndOfOptions = textBoxCurrentKey + 1 > textBoxOptions.length - 1;
@@ -146,7 +144,7 @@ export default function Overlay(props: OverlayProps) {
         <TextBoxRight />
       </TextBoxContainer>
 
-      <CurrentMood mood={currentMood} />
+      <CurrentMood />
     </FooterContainer>
   );
 }
