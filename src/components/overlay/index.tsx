@@ -1,13 +1,5 @@
-import React, { useEffect, useState } from "react";
-
-import Icon from "./TextBoxIcons";
 import {
   FooterContainer,
-  TextBox,
-  TextBoxText,
-  TextBoxLeft,
-  TextBoxRight,
-  TextBoxContainer,
   FireIconContainer,
   LighteningIconContainer,
   ExtraStarsContainer,
@@ -25,53 +17,12 @@ import Fire from "./svg/Fire";
 import Lightening from "./svg/Lightening";
 import ExtraStars from "./svg/ExtraStars";
 
+import CtaBanner from "./CtaBanner";
 import CurrentMood from "./CurrentMood";
 
 interface OverlayProps {}
 
-interface TextBoxOption {
-  text: string;
-  iconName: string;
-  type: string;
-}
-
-const textBoxOptions: TextBoxOption[] = [
-  {
-    text: "Build stuff, learn things, love what you do",
-    iconName: "lightening",
-    type: "slogan",
-  },
-  {
-    text: "!twitter - @whitep4nth3r",
-    iconName: "twitter",
-    type: "twitter",
-  },
-  {
-    text: "!discord - Join our Discord community",
-    iconName: "discord",
-    type: "discord",
-  },
-  {
-    text: "!github - Find stream projects on github",
-    iconName: "github",
-    type: "github",
-  },
-];
-
 export default function Overlay(props: OverlayProps) {
-  const [textBoxCurrentKey, setTextBoxCurrentKey] = useState(0);
-  const [textBox, setTextBox] = useState(textBoxOptions[textBoxCurrentKey]);
-  const atEndOfOptions = textBoxCurrentKey + 1 > textBoxOptions.length - 1;
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const newKey = atEndOfOptions ? (0 as number) : ((textBoxCurrentKey + 1) as number);
-      setTextBoxCurrentKey(newKey);
-      setTextBox(textBoxOptions[newKey]);
-    }, 30000);
-    return () => clearInterval(interval);
-  }, [textBoxCurrentKey, atEndOfOptions]);
-
   return (
     <FooterContainer>
       <FireIconContainer>
@@ -135,15 +86,7 @@ export default function Overlay(props: OverlayProps) {
         <PewPewPanther />
       </PewPewPantherContainer>
 
-      <TextBoxContainer>
-        <TextBoxLeft />
-        <TextBox key={`item-${textBoxCurrentKey}`} type={textBox.type}>
-          <Icon iconName={textBox.iconName}></Icon>
-          <TextBoxText>{textBox.text}</TextBoxText>
-        </TextBox>
-        <TextBoxRight />
-      </TextBoxContainer>
-
+      <CtaBanner />
       <CurrentMood />
     </FooterContainer>
   );
