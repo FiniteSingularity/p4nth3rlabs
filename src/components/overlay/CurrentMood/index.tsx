@@ -65,7 +65,7 @@ export default function CurrentMood() {
   const audioUrl = getAlertAudioUrl(currentMood);
 
   return (
-    <CurrentMoodContainer key={`${Math.random()}-${currentMood}`}>
+    <CurrentMoodContainer key={currentMood}>
       <audio autoPlay>
         <source src={audioUrl} type="audio/mp3" />
       </audio>
