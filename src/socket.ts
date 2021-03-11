@@ -48,6 +48,7 @@ export default class Socket {
       specialUserJoin: new Set(),
       chatMessage: new Set(),
       follow: new Set(),
+      announceGiveaway: new Set(),
       startGiveaway: new Set(),
       endGiveaway: new Set(),
       drawGiveaway: new Set(),

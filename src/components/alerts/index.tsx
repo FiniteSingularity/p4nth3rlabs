@@ -1,4 +1,4 @@
-import React, { Dispatch } from "react";
+import { Dispatch } from "react";
 import {
   AlertContainer,
   AlertLogo,
@@ -35,6 +35,14 @@ function getRandomCongrats(username: string): string {
 
 function getBannerText(alert: AlertQueueEvent): any {
   switch (alert.event) {
+    case MainframeEvent.announceGiveaway:
+      return {
+        banner: "!win !win !win",
+        footer: "It's Giveaway Friday!",
+        imgAlt: "p4nth3rb0t",
+        logoUrl:
+          "https://static-cdn.jtvnw.net/jtv_user_pictures/dc5efa29-bbe7-446a-b168-b78cebd7dc2b-profile_image-300x300.png",
+      };
     case MainframeEvent.drawGiveaway:
       return {
         banner: "Winner",
@@ -88,6 +96,8 @@ function getBannerText(alert: AlertQueueEvent): any {
 
 function getAlertAudioUrl(type: MainframeEvent) {
   switch (type) {
+    case MainframeEvent.announceGiveaway:
+      return process.env.REACT_APP_AUDIO_ALERT_ANNOUNCE_GIVEAWAY_URL;
     case MainframeEvent.drawGiveaway:
       return process.env.REACT_APP_AUDIO_ALERT_GIVEAWAY_URL;
     case MainframeEvent.follow:

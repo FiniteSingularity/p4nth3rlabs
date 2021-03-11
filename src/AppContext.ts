@@ -1,6 +1,7 @@
 import {
   ChatMessageData,
   CheerPacket,
+  AnnounceGiveawayPacket,
   DrawGiveawayPacket,
   EndGiveawayPacket,
   EnterGiveawayPacket,
@@ -17,7 +18,9 @@ export type AlertQueueEvent =
   | SubPacket
   | FollowPacket
   | RaidPacket
+  | AnnounceGiveawayPacket
   | DrawGiveawayPacket;
+
 export type GiveawayEntryEvent = EnterGiveawayPacket | StartGiveawayPacket | EndGiveawayPacket;
 
 export interface AlertCompleteAction {
