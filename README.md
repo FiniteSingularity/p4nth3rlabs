@@ -1,50 +1,59 @@
-# p3nth3rlabs
+# P4nth3rLabs: my interactive Twitch stream overlays
+
+![P4nth3rLabs: my interactive Twitch stream overlays](https://p4nth3rblog-og-image.vercel.app/P4nth3rLabs%3A%20my%20interactive%20Twitch%20stream%20overlays.png?theme=light&md=0&fontSize=80px&images=https%3A%2F%2Fp4nth3rlabs.netlify.app%2Fassets%2Fsvgs%2Fpanthers%2Ffire.svg)
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# Getting started with development
+This repository contains the front end code for my Twitch stream overlays.
+
+Routes:
+
+- /alerts
+- /chat
+- /giveaway
+- /overlay
+- /webcam
+
+## Getting started with development
 
 System requirements:
 
-```
+```bash
 NodeJs
 npm
 ```
 
-### Install dependencies
+## Install dependencies
 
 In a terminal tab, run:
 
-```
+```bash
 cd path/to/repo
 npm install
-
-OR
-
+#or
 yarn install
 ```
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-### Environment variables
+## Environment variables
 
 All environment variables you will need for the application to run are demonstrated for you in the file `env.example`.
 
-### The backend
+### The backend application
 
-This application uses a connection to the (p4nth3rb0t-mainframe)[https://github.com/whitep4nth3r/p4nth3rb0t-mainframe] to receive websocket events from Twitch.
+This application uses a connection to the [p4nth3rb0t-mainframe](https://github.com/whitep4nth3r/p4nth3rb0t-mainframe) to receive websocket events from Twitch.
 
-### Running the application
+## Running the application
 
 In a terminal tab, run:
 
-```
+```bash
 cd path/to/repo
 npm run start
-
-OR
-
+#or
 yarn start
 ```
 
@@ -65,6 +74,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
