@@ -1,14 +1,13 @@
-import { ChatMessageData } from 'p4nth3rb0t-types';
-import React from 'react';
+import { ChatMessageData } from "p4nth3rb0t-types";
 import {
   ChatMessage,
   DisplayName,
   MessageText,
   AvatarContainer,
   MessageContainer,
-} from './index.style';
-
-import { processChat } from './utils';
+} from "./index.style";
+import { processChat } from "./utils";
+import { getRandomPantherImgUrl } from "../../../utils";
 
 interface MessageProps {
   message: ChatMessageData;
@@ -30,9 +29,10 @@ export default function Message(props: MessageProps) {
 
   const processedChat = processChat(message);
   const startsWithTag = processedChat.message.startsWith('<span class="tag">');
-  const isAction: boolean = processedChat.type === 'action';
+  const isAction: boolean = processedChat.type === "action";
 
   const isDefault = !isVip && !isBroadcaster && !isSubscriber;
+  const backgroundImage = logoUrl === "" ? getRandomPantherImgUrl() : logoUrl;
 
   return (
     <ChatMessage
@@ -44,7 +44,7 @@ export default function Message(props: MessageProps) {
       isMyFavoriteStreamer={isMyFavoriteStreamer}
       teamMemberIconUrl={teamMemberIconUrl ?? ""}
     >
-      <AvatarContainer backgroundImage={logoUrl} />
+      <AvatarContainer backgroundImage={backgroundImage} />
       <MessageContainer>
         <DisplayName
           className={!isDefault ? `background-clip-text-hack` : ``}

@@ -13,6 +13,7 @@ import { useAlertQueue } from "../../AlertQueue";
 import { debugAlert } from "./debug";
 import { AlertQueueEvent } from "../../AppContext";
 import { MainframeEvent } from "p4nth3rb0t-types";
+import { getRandomPantherImgUrl } from "../../utils";
 
 interface AlertProps {
   dispatch: Dispatch<any>;
@@ -48,21 +49,21 @@ function getBannerText(alert: AlertQueueEvent): any {
         banner: "Winner",
         footer: `${getRandomCongrats(alert.data.winner)}`,
         imgAlt: alert.data.winner,
-        logoUrl: alert.data.logoUrl,
+        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrl() : alert.data.logoUrl,
       };
     case MainframeEvent.follow:
       return {
         banner: "New follower",
         footer: alert.data.followerName,
         imgAlt: alert.data.followerName,
-        logoUrl: alert.data.logoUrl,
+        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrl() : alert.data.logoUrl,
       };
     case MainframeEvent.raid:
       return {
         banner: "It's a raid!",
         footer: `${alert.data.raider} is raiding with ${alert.data.raiderCount} viewers!`,
         imgAlt: alert.data.raider,
-        logoUrl: alert.data.logoUrl,
+        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrl() : alert.data.logoUrl,
       };
     case MainframeEvent.cheer:
       return {
@@ -71,7 +72,7 @@ function getBannerText(alert: AlertQueueEvent): any {
           alert.data.cheererName
         }!`,
         imgAlt: alert.data.cheererName,
-        logoUrl: alert.data.logoUrl,
+        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrl() : alert.data.logoUrl,
       };
     case MainframeEvent.sub:
       let tierText =
@@ -82,7 +83,7 @@ function getBannerText(alert: AlertQueueEvent): any {
           alert.data.months > 0 ? "re" : ""
         }subscribed ${tierText}!`,
         imgAlt: alert.data.subscriberUsername,
-        logoUrl: alert.data.logoUrl,
+        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrl() : alert.data.logoUrl,
       };
     default:
       return {

@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import { WebcamContainer, WebcamFrame, Panther, WebcamPosProps } from './index.style';
+import { useEffect, useState } from "react";
+import { WebcamContainer, WebcamFrame, Panther, WebcamPosProps } from "./index.style";
 
 enum Panthers {
-  Cool = 'cool',
-  Fire = 'fire',
-  Heart = 'heart',
-  Majick = 'majick',
-  PewPew = 'pewpew',
-  Star = 'star',
+  Cool = "cool",
+  Fire = "fire",
+  Heart = "heart",
+  Majick = "majick",
+  PewPew = "pewpew",
+  Star = "star",
 }
 
-export const getRandomPanther = (currentPanther: string): string => {
+const getRandomPanther = (currentPanther: string): string => {
   const panthers = Object.values(Panthers).filter((panther) => panther !== currentPanther);
   return panthers[Math.floor(Math.random() * panthers.length)];
 };
@@ -60,7 +60,7 @@ export default function Webcam() {
           transition={{
             delay: 1,
             duration: 5,
-            ease: 'easeInOut',
+            ease: "easeInOut",
             times: [0, 0.15, 0.2, 0.4, 0.6, 0.8, 0.95, 1],
           }}
         />
