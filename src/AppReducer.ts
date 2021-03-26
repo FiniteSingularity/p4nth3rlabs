@@ -1,12 +1,20 @@
 import type { AllActions, AppState } from "./AppContext";
 import { MaxMessageCount } from "./components/chat";
-import { MainframeEvent } from "p4nth3rb0t-types";
+import { MainframeEvent, ChatMessageData } from "p4nth3rb0t-types";
 import { getTeamMemberIconUrl } from "./components/chat/message/utils";
 
 export default function AppReducer(state: AppState, action: AllActions) {
   const newState = { ...state };
 
   switch (action.event) {
+    case MainframeEvent.deleteChatMessage:
+      const filteredChatMessages = newState.chatMessages.filter(
+        (message: ChatMessageData) => message.messageId !== action.data.messageId,
+      );
+
+      newState.chatMessages = filteredChatMessages;
+
+      return { ...newState };
     case MainframeEvent.chatMessage:
       action.data.teamMemberIconUrl = getTeamMemberIconUrl(action.data.isTeamMember);
 
