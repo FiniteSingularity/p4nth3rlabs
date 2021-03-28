@@ -37,9 +37,15 @@ export default function AppReducer(state: AppState, action: AllActions) {
       newState.alerts.shift();
       return { ...newState };
     case MainframeEvent.startGiveaway:
+      if (!newState.alerts.some((alert) => alert.id === action.id)) {
+        newState.alerts.push(action);
+      }
       newState.giveawayInProgress = true;
       return { ...newState };
     case MainframeEvent.endGiveaway:
+      if (!newState.alerts.some((alert) => alert.id === action.id)) {
+        newState.alerts.push(action);
+      }
       newState.giveawayInProgress = false;
       newState.giveawayEntries = [];
       return { ...newState };

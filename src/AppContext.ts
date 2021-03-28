@@ -19,6 +19,8 @@ export type AlertQueueEvent =
   | FollowPacket
   | RaidPacket
   | AnnounceGiveawayPacket
+  | StartGiveawayPacket
+  | EndGiveawayPacket
   | DrawGiveawayPacket;
 
 export type GiveawayEntryEvent = EnterGiveawayPacket | StartGiveawayPacket | EndGiveawayPacket;

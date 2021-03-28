@@ -13,7 +13,7 @@ import { useAlertQueue } from "../../AlertQueue";
 import { debugAlert } from "./debug";
 import { AlertQueueEvent } from "../../AppContext";
 import { MainframeEvent } from "p4nth3rb0t-types";
-import { getRandomPantherImgUrl } from "../../utils";
+import { getRandomPantherImgUrlLarge } from "../../utils";
 
 interface AlertProps {
   dispatch: Dispatch<any>;
@@ -36,6 +36,22 @@ function getRandomCongrats(username: string): string {
 
 function getBannerText(alert: AlertQueueEvent): any {
   switch (alert.event) {
+    case MainframeEvent.startGiveaway:
+      return {
+        banner: "!win !win !win",
+        footer: "Giveaway is open!",
+        imgAlt: "p4nth3rb0t",
+        logoUrl:
+          "https://static-cdn.jtvnw.net/jtv_user_pictures/dc5efa29-bbe7-446a-b168-b78cebd7dc2b-profile_image-300x300.png",
+      };
+    case MainframeEvent.endGiveaway:
+      return {
+        banner: "!win !win !win",
+        footer: "Giveaway is closed!",
+        imgAlt: "p4nth3rb0t",
+        logoUrl:
+          "https://static-cdn.jtvnw.net/jtv_user_pictures/dc5efa29-bbe7-446a-b168-b78cebd7dc2b-profile_image-300x300.png",
+      };
     case MainframeEvent.announceGiveaway:
       return {
         banner: "!win !win !win",
@@ -49,21 +65,21 @@ function getBannerText(alert: AlertQueueEvent): any {
         banner: "Winner",
         footer: `${getRandomCongrats(alert.data.winner)}`,
         imgAlt: alert.data.winner,
-        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrl() : alert.data.logoUrl,
+        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrlLarge() : alert.data.logoUrl,
       };
     case MainframeEvent.follow:
       return {
         banner: "New follower",
         footer: alert.data.followerName,
         imgAlt: alert.data.followerName,
-        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrl() : alert.data.logoUrl,
+        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrlLarge() : alert.data.logoUrl,
       };
     case MainframeEvent.raid:
       return {
         banner: "It's a raid!",
         footer: `${alert.data.raider} is raiding with ${alert.data.raiderCount} viewers!`,
         imgAlt: alert.data.raider,
-        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrl() : alert.data.logoUrl,
+        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrlLarge() : alert.data.logoUrl,
       };
     case MainframeEvent.cheer:
       return {
@@ -72,7 +88,7 @@ function getBannerText(alert: AlertQueueEvent): any {
           alert.data.cheererName
         }!`,
         imgAlt: alert.data.cheererName,
-        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrl() : alert.data.logoUrl,
+        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrlLarge() : alert.data.logoUrl,
       };
     case MainframeEvent.sub:
       let tierText =
@@ -83,7 +99,7 @@ function getBannerText(alert: AlertQueueEvent): any {
           alert.data.months > 0 ? "re" : ""
         }subscribed ${tierText}!`,
         imgAlt: alert.data.subscriberUsername,
-        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrl() : alert.data.logoUrl,
+        logoUrl: alert.data.logoUrl === "" ? getRandomPantherImgUrlLarge() : alert.data.logoUrl,
       };
     default:
       return {
@@ -97,6 +113,10 @@ function getBannerText(alert: AlertQueueEvent): any {
 
 function getAlertAudioUrl(type: MainframeEvent) {
   switch (type) {
+    case MainframeEvent.startGiveaway:
+      return "";
+    case MainframeEvent.endGiveaway:
+      return "";
     case MainframeEvent.announceGiveaway:
       return process.env.REACT_APP_AUDIO_ALERT_ANNOUNCE_GIVEAWAY_URL;
     case MainframeEvent.drawGiveaway:
