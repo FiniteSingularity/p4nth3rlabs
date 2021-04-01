@@ -23,7 +23,7 @@ Routes:
 System requirements:
 
 ```bash
-NodeJs
+NodeJS
 npm
 ```
 
