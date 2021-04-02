@@ -41,24 +41,21 @@ function getBannerText(alert: AlertQueueEvent): any {
         banner: "!win !win !win",
         footer: "Giveaway is open!",
         imgAlt: "p4nth3rb0t",
-        logoUrl:
-          "https://static-cdn.jtvnw.net/jtv_user_pictures/dc5efa29-bbe7-446a-b168-b78cebd7dc2b-profile_image-300x300.png",
+        logoUrl: "/assets/special/egg_2.png",
       };
     case MainframeEvent.endGiveaway:
       return {
         banner: "!win !win !win",
         footer: "Giveaway is closed!",
         imgAlt: "p4nth3rb0t",
-        logoUrl:
-          "https://static-cdn.jtvnw.net/jtv_user_pictures/dc5efa29-bbe7-446a-b168-b78cebd7dc2b-profile_image-300x300.png",
+        logoUrl: "/assets/special/egg_2.png",
       };
     case MainframeEvent.announceGiveaway:
       return {
         banner: "!win !win !win",
         footer: "It's Giveaway Friday!",
         imgAlt: "p4nth3rb0t",
-        logoUrl:
-          "https://static-cdn.jtvnw.net/jtv_user_pictures/dc5efa29-bbe7-446a-b168-b78cebd7dc2b-profile_image-300x300.png",
+        logoUrl: "/assets/special/egg_1.png",
       };
     case MainframeEvent.drawGiveaway:
       return {
