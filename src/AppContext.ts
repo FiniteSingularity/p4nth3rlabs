@@ -10,7 +10,7 @@ import {
   StartGiveawayPacket,
   SubPacket,
   WebSocketPacket,
-} from "p4nth3rb0t-types";
+} from "@whitep4nth3r/p4nth3rb0t-types";
 import { createContext, Dispatch } from "react";
 
 export type AlertQueueEvent =

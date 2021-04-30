@@ -1,22 +1,22 @@
-import type { ConstructedEmote } from '../types';
-import sanitizeHtml from 'sanitize-html';
-import { ChatMessageData } from 'p4nth3rb0t-types';
+import type { ConstructedEmote } from "../types";
+import sanitizeHtml from "sanitize-html";
+import { ChatMessageData } from "@whitep4nth3r/p4nth3rb0t-types";
 
 export const getTeamMemberIconUrl = (isTeamMember: boolean): string => {
   const teamMemberIconUrls = [
-    'https://static-cdn.jtvnw.net/emoticons/v2/302880696/default/dark/3.0',
-    'https://static-cdn.jtvnw.net/emoticons/v2/303132137/default/dark/3.0',
-    'https://static-cdn.jtvnw.net/emoticons/v2/303132133/default/dark/3.0',
-    'https://static-cdn.jtvnw.net/emoticons/v2/302880702/default/dark/3.0',
+    "https://static-cdn.jtvnw.net/emoticons/v2/302880696/default/dark/3.0",
+    "https://static-cdn.jtvnw.net/emoticons/v2/303132137/default/dark/3.0",
+    "https://static-cdn.jtvnw.net/emoticons/v2/303132133/default/dark/3.0",
+    "https://static-cdn.jtvnw.net/emoticons/v2/302880702/default/dark/3.0",
   ];
 
   return isTeamMember
     ? teamMemberIconUrls[Math.floor(Math.random() * teamMemberIconUrls.length)]
-    : '';
+    : "";
 };
 
 export function processChat(chat_event: ChatMessageData) {
-  let tempMessage: string = chat_event.message.replace(/<img/g, '<DEL');
+  let tempMessage: string = chat_event.message.replace(/<img/g, "<DEL");
 
   const emotes: any[] = [];
 
@@ -49,9 +49,9 @@ export function processChat(chat_event: ChatMessageData) {
 
   tempMessage = sanitizeHtml(tempMessage, {
     allowedAttributes: {
-      img: ['class', 'src'],
+      img: ["class", "src"],
     },
-    allowedTags: ['marquee', 'em', 'strong', 'b', 'i', 'code', 'strike', 'img'],
+    allowedTags: ["marquee", "em", "strong", "b", "i", "code", "strike", "img"],
   });
 
   tempMessage = tempMessage.replace(/@(\w*)/gm, `<span class="tag">$&</span>`);
@@ -64,7 +64,7 @@ export function processChat(chat_event: ChatMessageData) {
 }
 
 export function generateEmote(emoteId: string, position: string): ConstructedEmote {
-  const [start, end] = position.split('-').map(Number);
+  const [start, end] = position.split("-").map(Number);
 
   //todo - if only emote - make 3.0
 

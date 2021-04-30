@@ -1,4 +1,4 @@
-import { ChatMessageData } from "p4nth3rb0t-types";
+import { ChatMessageData } from "@whitep4nth3r/p4nth3rb0t-types";
 import {
   ChatMessage,
   DisplayName,

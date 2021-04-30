@@ -1,4 +1,4 @@
-import { WebSocketPacket, MainframeEvent } from "p4nth3rb0t-types";
+import { WebSocketPacket, MainframeEvent } from "@whitep4nth3r/p4nth3rb0t-types";
 
 export interface SocketOptions {
   reconnect: boolean;

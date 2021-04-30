@@ -1,6 +1,6 @@
 import { Dispatch, useContext, useEffect, useState } from "react";
 import AppContext, { AlertCompleteAction, AlertQueueEvent } from "./AppContext";
-import { MainframeEvent } from "p4nth3rb0t-types";
+import { MainframeEvent } from "@whitep4nth3r/p4nth3rb0t-types";
 
 export function useAlertQueue(dispatch: Dispatch<any>): AlertQueueEvent | null {
   const ctx = useContext(AppContext);

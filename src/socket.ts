@@ -1,5 +1,5 @@
 /* eslint-disable object-curly-newline */
-import { WebSocketPacket } from "p4nth3rb0t-types";
+import { WebSocketPacket } from "@whitep4nth3r/p4nth3rb0t-types";
 import type {
   SocketOptions,
   Callback,
@@ -60,6 +60,7 @@ export default class Socket {
       weatherTrailEvent: new Set(),
       yeetUser: new Set(),
       moodChange: new Set(),
+      merch: new Set(),
     };
   }
 

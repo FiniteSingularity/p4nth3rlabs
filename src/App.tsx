@@ -9,7 +9,7 @@ import Overlay from "./components/overlay";
 import Webcam from "./components/webcam";
 import Giveaway from "./components/giveaway";
 import { GlobalStyle } from "./styles";
-import { WebSocketPacket, CurrentMoods } from "p4nth3rb0t-types";
+import { WebSocketPacket, CurrentMoods } from "@whitep4nth3r/p4nth3rb0t-types";
 
 interface AppProps {
   uri: string | undefined;

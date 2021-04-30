@@ -1,5 +1,5 @@
 import styled, { keyframes, css } from "styled-components";
-import { MainframeEvent } from "p4nth3rb0t-types";
+import { MainframeEvent } from "@whitep4nth3r/p4nth3rb0t-types";
 
 const doAnimation = true;
 

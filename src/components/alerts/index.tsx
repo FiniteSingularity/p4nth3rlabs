@@ -12,7 +12,7 @@ import BannerTextPath from "./svg/bannerTextPath";
 import { useAlertQueue } from "../../AlertQueue";
 import { debugAlert } from "./debug";
 import { AlertQueueEvent } from "../../AppContext";
-import { MainframeEvent } from "p4nth3rb0t-types";
+import { MainframeEvent } from "@whitep4nth3r/p4nth3rb0t-types";
 import { getRandomPantherImgUrlLarge } from "../../utils";
 
 interface AlertProps {

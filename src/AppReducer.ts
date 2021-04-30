@@ -1,6 +1,6 @@
 import type { AllActions, AppState } from "./AppContext";
 import { MaxMessageCount } from "./components/chat";
-import { MainframeEvent, ChatMessageData } from "p4nth3rb0t-types";
+import { MainframeEvent, ChatMessageData } from "@whitep4nth3r/p4nth3rb0t-types";
 import { getTeamMemberIconUrl } from "./components/chat/message/utils";
 
 export default function AppReducer(state: AppState, action: AllActions) {
