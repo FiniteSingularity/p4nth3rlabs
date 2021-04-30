@@ -51,7 +51,7 @@ export default function Giveaway(props: GiveawayProps) {
               <PantherContainer>
                 <MajickPanther />
               </PantherContainer>
-              <GiveawayTitleText>Win a JetBrains License!</GiveawayTitleText>
+              <GiveawayTitleText>Win a FREE T-shirt!</GiveawayTitleText>
               <PantherContainer>
                 <MajickPanther />
               </PantherContainer>
