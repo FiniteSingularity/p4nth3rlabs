@@ -1,11 +1,11 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes, css } from "styled-components";
 
 interface ChatMessageProps {
   isSubscriber: boolean;
   isBroadcaster: boolean;
   isVip: boolean;
   isMod: boolean;
-  isMyFavoriteStreamer: boolean,
+  isMyFavoriteStreamer: boolean;
   isTeamMember: boolean;
   teamMemberIconUrl: string;
 }
@@ -33,12 +33,12 @@ const slideOutLeft = keyframes`
     transform: none;
   }
   100% {
-    transform: translate3d(-100%,0,0);
+    transform: translate3d(-150%,0,0);
   }
 `;
 
 const renderSubscriberAfter = css`
-  content: '';
+  content: "";
   position: absolute;
   right: -4px;
   bottom: -13px;
@@ -49,7 +49,7 @@ const renderSubscriberAfter = css`
 `;
 
 const renderBroadcasterAfter = css`
-  content: '';
+  content: "";
   position: absolute;
   right: -4px;
   bottom: -13px;
@@ -63,7 +63,7 @@ const renderIsTeamMemberBefore = (imgUrl: string | undefined) => {
   if (imgUrl !== undefined) {
     return css`
       &:before {
-        content: url('${imgUrl}');
+        content: url("${imgUrl}");
         position: absolute;
         bottom: -12px;
         right: -10px;
@@ -107,15 +107,15 @@ const ChatMessage = styled.div<ChatMessageProps>`
   overflow: hidden;
 
   &:after {
-    ${(props) => (props.isSubscriber ? renderSubscriberAfter : '')}
-    ${(props) => (props.isBroadcaster ? renderBroadcasterAfter : '')}
+    ${(props) => (props.isSubscriber ? renderSubscriberAfter : "")}
+    ${(props) => (props.isBroadcaster ? renderBroadcasterAfter : "")}
   }
 
-  ${(props) => (props.isVip ? vipBorderImage : '')};
-  ${(props) => (props.isMod ? modBorderImage : '')};
-  ${(props) => (props.isMyFavoriteStreamer ? myFavoriteStreamerBorderImage : '')};
-  ${(props) => (props.isBroadcaster ? broadcasterBorderImage : '')};
-  ${(props) => (props.isTeamMember ? renderIsTeamMemberBefore(props.teamMemberIconUrl) : '')}
+  ${(props) => (props.isVip ? vipBorderImage : "")};
+  ${(props) => (props.isMod ? modBorderImage : "")};
+  ${(props) => (props.isMyFavoriteStreamer ? myFavoriteStreamerBorderImage : "")};
+  ${(props) => (props.isBroadcaster ? broadcasterBorderImage : "")};
+  ${(props) => (props.isTeamMember ? renderIsTeamMemberBefore(props.teamMemberIconUrl) : "")}
 `;
 
 const vipLinearGradient = css`
@@ -149,10 +149,10 @@ const DisplayName = styled.p<ChatMessageProps>`
   color: var(--yellow);
   font-weight: var(--font-weight-bold);
 
-  ${(props) => (props.isVip ? vipLinearGradient : '')};
-  ${(props) => (props.isMod ? modLinearGradient : '')};
-  ${(props) => (props.isMyFavoriteStreamer ? myFavoriteStreamerLinearGradient : '')};
-  ${(props) => (props.isBroadcaster ? broadcasterLinearGradient : '')};
+  ${(props) => (props.isVip ? vipLinearGradient : "")};
+  ${(props) => (props.isMod ? modLinearGradient : "")};
+  ${(props) => (props.isMyFavoriteStreamer ? myFavoriteStreamerLinearGradient : "")};
+  ${(props) => (props.isBroadcaster ? broadcasterLinearGradient : "")};
 `;
 
 const MessageActionStyles = css`
@@ -175,8 +175,8 @@ const MessageText = styled.div<MessageTextProps>`
   z-index: 2;
   position: relative;
   text-shadow: 2px 2px var(--black);
-  ${(props) => (props.isAction ? MessageActionStyles : '')};
-  ${(props) => (props.startsWithTag ? StartswithTagStyles : '')};
+  ${(props) => (props.isAction ? MessageActionStyles : "")};
+  ${(props) => (props.startsWithTag ? StartswithTagStyles : "")};
 `;
 
 const AvatarContainer = styled.div<AvatarContainerProps>`
