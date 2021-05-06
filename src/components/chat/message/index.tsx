@@ -32,7 +32,11 @@ export default function Message(props: MessageProps) {
   const isAction: boolean = processedChat.type === "action";
 
   const isDefault = !isVip && !isBroadcaster && !isSubscriber;
-  const backgroundImage = logoUrl === "" ? getRandomPantherImgUrl() : logoUrl;
+  let backgroundImage = logoUrl === "" ? getRandomPantherImgUrl() : logoUrl;
+
+  if (displayName === "stefanjudis") {
+    backgroundImage = "/assets/special/dancing_baby.gif";
+  }
 
   return (
     <ChatMessage
