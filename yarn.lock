@@ -2157,10 +2157,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@whitep4nth3r/p4nth3rb0t-types@^1.0.0":
-  "integrity" "sha512-gVewtOqevgMFwSMWVnNVklzcwFrPPOmlxw2PKywGUp59X4A5zU0rSQTBCWKDlmT7Pzel1WfUw/Hp4y9QzLlibA=="
-  "resolved" "https://registry.npmjs.org/@whitep4nth3r/p4nth3rb0t-types/-/p4nth3rb0t-types-1.0.0.tgz"
-  "version" "1.0.0"
+"@whitep4nth3r/p4nth3rb0t-types@^1.0.2":
+  "integrity" "sha512-kuCMxy3RMN4EYAgAoNJi5BoRVCgzl4n0jW+6dX5yqISzyFraq37oujys9rtXgmAh4M71z6yiWyqu9ZzeXnl/xw=="
+  "resolved" "https://registry.npmjs.org/@whitep4nth3r/p4nth3rb0t-types/-/p4nth3rb0t-types-1.0.2.tgz"
+  "version" "1.0.2"
 
 "@xtuc/ieee754@^1.2.0":
   "integrity" "sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA=="

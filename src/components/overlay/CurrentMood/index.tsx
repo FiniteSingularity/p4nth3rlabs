@@ -11,6 +11,7 @@ import Majick from "./svg/Majick";
 import PewPew from "./svg/PewPew";
 import Sad from "./svg/Sad";
 import Star from "./svg/Star";
+import Troll from "./svg/Troll";
 import Banner from "./svg/Banner";
 
 function getPantherSvg(mood: string) {
@@ -31,6 +32,8 @@ function getPantherSvg(mood: string) {
       return <Sad />;
     case CurrentMoods.Star:
       return <Star />;
+    case CurrentMoods.Troll:
+      return <Troll />;
     default:
       return <Majick />;
   }
@@ -54,6 +57,8 @@ function getAlertAudioUrl(mood: string) {
       return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_SAD;
     case CurrentMoods.Star:
       return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_STAR;
+    case CurrentMoods.Troll:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_TROLL;
     default:
       return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_MAJICK;
   }
