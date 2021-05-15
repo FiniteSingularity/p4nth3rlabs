@@ -1,9 +1,11 @@
+const panthers = ["rap", "coffee", "tattoo", "cool", "fire", "heart", "majick", "pewpew", "star"];
+
 export const getRandomPantherImgUrl = (): string => {
-  const panthers = ["cool", "fire", "heart", "majick", "pewpew", "star"];
-  return `/assets/panthers/${panthers[Math.floor(Math.random() * panthers.length)]}.png`;
+  const newRandomPanther = panthers[Math.floor(Math.random() * panthers.length)];
+  return `/assets/panthers/${newRandomPanther}.png`;
 };
 
 export const getRandomPantherImgUrlLarge = (): string => {
-  const panthers = ["cool", "fire", "heart", "majick", "pewpew", "star"];
-  return `/assets/panthers/${panthers[Math.floor(Math.random() * panthers.length)]}-300.png`;
+  const newRandomPanther = panthers[Math.floor(Math.random() * panthers.length)];
+  return `/assets/panthers/${newRandomPanther}-300.png`;
 };

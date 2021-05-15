@@ -8,6 +8,12 @@ export const getTeamMemberIconUrl = (isTeamMember: boolean): string => {
     "https://static-cdn.jtvnw.net/emoticons/v2/303132137/default/dark/3.0",
     "https://static-cdn.jtvnw.net/emoticons/v2/303132133/default/dark/3.0",
     "https://static-cdn.jtvnw.net/emoticons/v2/302880702/default/dark/3.0",
+    "https://static-cdn.jtvnw.net/emoticons/v2/303767955/default/dark/3.0",
+    "https://static-cdn.jtvnw.net/emoticons/v2/303544706/default/dark/3.0",
+    "https://static-cdn.jtvnw.net/emoticons/v2/302880692/default/dark/3.0",
+    "https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_988672c47ba5482c89c68aef34016169/default/dark/3.0",
+    "https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_b7ccedd05f684a85a05587a8a8605f6c/default/dark/3.0",
+    "https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_56f5ba6b5b944560a2476d52027dbece/default/dark/3.0",
   ];
 
   return isTeamMember
