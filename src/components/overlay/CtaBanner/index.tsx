@@ -28,6 +28,11 @@ const textBoxOptions: TextBoxOption[] = [
     type: "discord",
   },
   {
+    text: "!merch - rep the claw in style",
+    iconName: "lightening",
+    type: "merch",
+  },
+  {
     text: "!github - Find stream projects on github",
     iconName: "github",
     type: "github",

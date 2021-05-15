@@ -9,6 +9,7 @@ const textBoxWidths = {
   twitter: "276px",
   discord: "380px",
   slogan: "432px",
+  merch: "304px",
 };
 
 const fadeIn = keyframes`
@@ -53,6 +54,11 @@ function getGrowAnimation(props: TextBoxProps) {
       return keyframes`
       from { width: 0; }
       to { width: ${textBoxWidths.slogan}; }
+    `;
+    case "merch":
+      return keyframes`
+      from { width: 0; }
+      to { width: ${textBoxWidths.merch}; }
     `;
   }
 }
