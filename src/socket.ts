@@ -61,6 +61,7 @@ export default class Socket {
       yeetUser: new Set(),
       moodChange: new Set(),
       merch: new Set(),
+      shoutOut: new Set(),
     };
   }
 

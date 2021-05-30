@@ -6,6 +6,7 @@ import {
   AlertName,
   AlertBanner,
   AlertContainerInner,
+  AlertLastStreamTitle,
 } from "./index.style";
 import BannerImage from "./svg/bannerImage";
 import BannerTextPath from "./svg/bannerTextPath";
@@ -36,6 +37,13 @@ function getRandomCongrats(username: string): string {
 
 function getBannerText(alert: AlertQueueEvent): any {
   switch (alert.event) {
+    case MainframeEvent.shoutOut:
+      return {
+        banner: "Shout out!",
+        footer: alert.data.username,
+        imgAlt: alert.data.username,
+        logoUrl: alert.data.logoUrl,
+      };
     case MainframeEvent.startGiveaway:
       return {
         banner: "!win !win !win",
@@ -161,6 +169,9 @@ export default function Alert(props: AlertProps) {
       <AlertNameContainer alertType={alert.event}>
         <AlertName>{displayText.footer}</AlertName>
       </AlertNameContainer>
+      {alert.event === MainframeEvent.shoutOut && (
+        <AlertLastStreamTitle>Last streamed: {alert.data.lastStreamTitle}</AlertLastStreamTitle>
+      )}
     </AlertContainer>
   );
 }

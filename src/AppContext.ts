@@ -10,6 +10,7 @@ import {
   StartGiveawayPacket,
   SubPacket,
   WebSocketPacket,
+  ShoutOutPacket,
 } from "@whitep4nth3r/p4nth3rb0t-types";
 import { createContext, Dispatch } from "react";
 
@@ -21,7 +22,8 @@ export type AlertQueueEvent =
   | AnnounceGiveawayPacket
   | StartGiveawayPacket
   | EndGiveawayPacket
-  | DrawGiveawayPacket;
+  | DrawGiveawayPacket
+  | ShoutOutPacket;
 
 export type GiveawayEntryEvent = EnterGiveawayPacket | StartGiveawayPacket | EndGiveawayPacket;
 

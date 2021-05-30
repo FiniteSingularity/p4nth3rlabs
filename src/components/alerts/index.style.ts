@@ -149,6 +149,8 @@ function getAlertContainerBackgroundCss(alertType: MainframeEvent): any {
       color = "red";
       break;
     case MainframeEvent.raid:
+    case MainframeEvent.shoutOut:
+    case MainframeEvent.drawGiveaway:
       color = "black";
       break;
     case MainframeEvent.cheer:
@@ -156,9 +158,6 @@ function getAlertContainerBackgroundCss(alertType: MainframeEvent): any {
       break;
     case MainframeEvent.sub:
       color = "yellow";
-      break;
-    case MainframeEvent.drawGiveaway:
-      color = "black";
       break;
     default:
       color = "red";
@@ -219,6 +218,48 @@ const AlertBanner = styled.div`
   top: 406px;
 `;
 
+const slideUp = keyframes`
+  0% {
+    transform: translateY(1000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
+
+const slideDown = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1000px);
+  }
+`;
+
+const AlertLastStreamTitle = styled.p`
+  ${doAnimation
+    ? css`
+        animation: ${slideUp} 0.5s ease-in-out,
+          ${slideDown} 0.2s ease var(--alert-display-time) forwards;
+      `
+    : ""}
+  position: absolute;
+  top: 720px;
+  left: 0;
+  right: 0;
+  width: 30%;
+  margin: auto;
+  border: 0.25rem solid var(--yellow);
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1rem;
+  font-size: 2rem;
+  line-height: 1.4;
+  box-shadow: 0.5rem 0.5rem 0 0 var(--red);
+  font-style: italic;
+  font-weight: var(--font-weight-bold);
+`;
+
 //alert__subtitle in global styles
 //alert__bannerTextPath in global styles
 //alert__bannerImage in global styles
@@ -230,4 +271,5 @@ export {
   AlertName,
   AlertBanner,
   AlertContainerInner,
+  AlertLastStreamTitle,
 };

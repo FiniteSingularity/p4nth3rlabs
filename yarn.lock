@@ -2194,10 +2194,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@whitep4nth3r/p4nth3rb0t-types@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@whitep4nth3r/p4nth3rb0t-types/-/p4nth3rb0t-types-1.0.4.tgz#733d88fc1527fc4d379d7df4df3a3237d380b2c0"
-  integrity sha512-k9/Y/mgoYkgMU8WZ3r32ZlYUO0jet3NnH19g4mYXJFUq8fmE1k78awEac2Zs2TwCGREDvZtp8dNgyuTEIqfPeg==
+"@whitep4nth3r/p4nth3rb0t-types@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@whitep4nth3r/p4nth3rb0t-types/-/p4nth3rb0t-types-1.0.7.tgz#1d2c5964cced793b82849479006ace4b437480a8"
+  integrity sha512-vdPEssi3ZykS1FP6NnvfILs8s4RGqW/eay9Zlw9hCrdvheuSpr5oClgQyZS538zRTn6BW1KomNIGXXEpO7e/ew==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
