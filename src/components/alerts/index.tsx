@@ -134,6 +134,8 @@ function getAlertAudioUrl(type: MainframeEvent) {
       return process.env.REACT_APP_AUDIO_ALERT_CHEER_URL;
     case MainframeEvent.sub:
       return process.env.REACT_APP_AUDIO_ALERT_SUB_URL;
+    case MainframeEvent.shoutOut:
+      return process.env.REACT_APP_AUDIO_ALERT_SHOUTOUT;
     default:
       return process.env.REACT_APP_AUDIO_ALERT_FOLLOW_URL;
   }
