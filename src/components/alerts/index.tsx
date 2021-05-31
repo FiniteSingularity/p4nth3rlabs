@@ -172,7 +172,9 @@ export default function Alert(props: AlertProps) {
         <AlertName>{displayText.footer}</AlertName>
       </AlertNameContainer>
       {alert.event === MainframeEvent.shoutOut && (
-        <AlertLastStreamTitle>Last streamed: {alert.data.lastStreamTitle}</AlertLastStreamTitle>
+        <AlertLastStreamTitle>
+          Last stream: {alert.data.lastStream.title} in {alert.data.lastStream.category}
+        </AlertLastStreamTitle>
       )}
     </AlertContainer>
   );
