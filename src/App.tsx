@@ -8,6 +8,7 @@ import Alerts from "./components/alerts";
 import Overlay from "./components/overlay";
 import Webcam from "./components/webcam";
 import Giveaway from "./components/giveaway";
+import BattleSnake from "./components/battlesnake";
 import { GlobalStyle } from "./styles";
 import { WebSocketPacket, CurrentMoods } from "@whitep4nth3r/p4nth3rb0t-types";
 
@@ -53,6 +54,9 @@ function App(props: AppProps) {
 
       <Router>
         <Switch>
+          <Route path="/battlesnake">
+            <BattleSnake />
+          </Route>
           <Route path="/chat">
             <MessageQueue />
           </Route>

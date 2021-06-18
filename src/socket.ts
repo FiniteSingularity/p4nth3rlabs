@@ -62,6 +62,7 @@ export default class Socket {
       moodChange: new Set(),
       merch: new Set(),
       shoutOut: new Set(),
+      timer: new Set(),
     };
   }
 
