@@ -6,29 +6,21 @@ const BattleSnakeContainer = styled.div`
   width: 1920px;
 `;
 
-const TopBanner = styled.div`
+const CornerTriangle = styled.div`
   background: linear-gradient(135deg, #e80987 15%, #3e338f 100%);
-  height: 65px;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 300px;
+  left: -50px;
+  position: absolute;
+  top: -120px;
+  width: 140px;
+  -webkit-transform: rotate(45deg);
 `;
 
-const LogoContainer = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-
-  img {
-    height: 75px;
-  }
-`;
-
-const BottomLogoContainer = styled(motion.div)`
+const ColorLogoContainer = styled.div`
   width: 300px;
   margin-left: auto;
   margin-right: auto;
-  bottom: 16px;
+  top: 23px;
   position: absolute;
   left: 0;
   right: 0;
@@ -49,4 +41,34 @@ const BadgeContainer = styled(motion.span)`
   }
 `;
 
-export { BattleSnakeContainer, LogoContainer, TopBanner, BottomLogoContainer, BadgeContainer };
+const WatermarkContainer = styled.div`
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+
+  img {
+    width: 100%;
+  }
+`;
+
+const BottomBar = styled.div`
+  position: fixed;
+  bottom: 64px;
+  height: 20px;
+  width: 100%;
+  background: linear-gradient(135deg, #e80987 15%, #3e338f 100%);
+`;
+
+export {
+  WatermarkContainer,
+  BattleSnakeContainer,
+  CornerTriangle,
+  ColorLogoContainer,
+  BadgeContainer,
+  BottomBar,
+};
