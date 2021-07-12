@@ -63,6 +63,7 @@ export default class Socket {
       merch: new Set(),
       shoutOut: new Set(),
       timer: new Set(),
+      banUser: new Set(),
     };
   }
 

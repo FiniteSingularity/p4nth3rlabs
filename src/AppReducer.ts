@@ -7,6 +7,13 @@ export default function AppReducer(state: AppState, action: AllActions) {
   const newState = { ...state };
 
   switch (action.event) {
+    case MainframeEvent.banUser:
+      const _filteredChatMessages = newState.chatMessages.filter(
+        (message: ChatMessageData) => message.userId !== action.data.userId,
+      );
+
+      newState.chatMessages = _filteredChatMessages;
+      return { ...newState };
     case MainframeEvent.deleteChatMessage:
       const filteredChatMessages = newState.chatMessages.filter(
         (message: ChatMessageData) => message.messageId !== action.data.messageId,
