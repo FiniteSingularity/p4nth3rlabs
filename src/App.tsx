@@ -44,6 +44,7 @@ function App(props: AppProps) {
     giveawayEntries: [],
     giveawayInProgress: false,
     currentMood: CurrentMoods.Majick,
+    numeronymMode: false,
   };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);

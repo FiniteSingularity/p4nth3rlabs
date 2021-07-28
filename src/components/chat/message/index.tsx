@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import AppContext from "../../../AppContext";
 import { ChatMessageData } from "@whitep4nth3r/p4nth3rb0t-types";
 import {
   ChatMessage,
@@ -14,6 +16,8 @@ interface MessageProps {
 }
 
 export default function Message(props: MessageProps) {
+  const { state } = useContext(AppContext);
+
   const { message } = props;
   const {
     displayName,
@@ -27,7 +31,7 @@ export default function Message(props: MessageProps) {
     teamMemberIconUrl,
   } = message;
 
-  const processedChat = processChat(message);
+  const processedChat = processChat(message, state.numeronymMode);
   const startsWithTag = processedChat.message.startsWith('<span class="tag">');
   const isAction: boolean = processedChat.type === "action";
 

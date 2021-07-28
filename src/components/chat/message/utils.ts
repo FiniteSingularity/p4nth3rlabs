@@ -1,6 +1,7 @@
 import type { ConstructedEmote } from "../types";
 import sanitizeHtml from "sanitize-html";
 import { ChatMessageData } from "@whitep4nth3r/p4nth3rb0t-types";
+import { makeNumeronym } from "@whitep4nth3r/numeronym-all-the-things";
 
 export const getTeamMemberIconUrl = (isTeamMember: boolean): string => {
   const teamMemberIconUrls = [
@@ -21,7 +22,7 @@ export const getTeamMemberIconUrl = (isTeamMember: boolean): string => {
     : "";
 };
 
-export function processChat(chat_event: ChatMessageData) {
+export function processChat(chat_event: ChatMessageData, numeronymMode: boolean) {
   let tempMessage: string = chat_event.message.replace(/<img/g, "<DEL");
 
   const emotes: any[] = [];
@@ -62,8 +63,10 @@ export function processChat(chat_event: ChatMessageData) {
 
   tempMessage = tempMessage.replace(/@(\w*)/gm, `<span class="tag">$&</span>`);
 
+  const showAsNumeronyms = numeronymMode && emotes.length === 0;
+
   return {
-    message: tempMessage,
+    message: showAsNumeronyms ? makeNumeronym(tempMessage) : tempMessage,
     emotes: emotes.map((m) => m.emoteImageTag as string),
     type: chat_event.type,
   };

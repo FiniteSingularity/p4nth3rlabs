@@ -2194,10 +2194,15 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@whitep4nth3r/p4nth3rb0t-types@^1.0.12":
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/@whitep4nth3r/p4nth3rb0t-types/-/p4nth3rb0t-types-1.0.12.tgz#2a0c720b281618948346d069a98396fd0c9bd1e2"
-  integrity sha512-bWjxTPCH6wMwxbpzskPCrf993LX2kprcGNVoVt2yMgCoUQxzvS6nn/w6YbyAR3/ySAvOUzQ313INduQu5fZG0A==
+"@whitep4nth3r/numeronym-all-the-things@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@whitep4nth3r/numeronym-all-the-things/-/numeronym-all-the-things-1.0.2.tgz#d38de568c0335eb122c3374a98297f5dffb2ef03"
+  integrity sha512-mtL9wqqZG94hDTmStZPZN+cQXlEAUoFf5BMaI91n3u4VD9W5XZjWRefOu203S04/eoDI7Kr8X2QEyjfUzaqnRQ==
+
+"@whitep4nth3r/p4nth3rb0t-types@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@whitep4nth3r/p4nth3rb0t-types/-/p4nth3rb0t-types-1.0.14.tgz#cea93122436c28573fcb592fc9970963a3e545c6"
+  integrity sha512-a4/IYQDp2ERMr44mkTdsGbo5c/oC245N1FyaNQI76qAGM9UZC+R6xfXHCCh8OWzgiRZMetjtPjRec3CZ0lFoWQ==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"

@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import AppContext from '../../AppContext';
-import Message from './message';
-import { MessageQueue } from './index.style';
+import { useContext } from "react";
+import AppContext from "../../AppContext";
+import Message from "./message";
+import { MessageQueue } from "./index.style";
 
 export const MaxMessageCount = 7;
 

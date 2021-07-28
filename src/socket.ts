@@ -65,6 +65,7 @@ export default class Socket {
       timer: new Set(),
       banUser: new Set(),
       timeoutUser: new Set(),
+      numeronym: new Set(),
     };
   }
 

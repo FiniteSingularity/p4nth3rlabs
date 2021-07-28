@@ -7,6 +7,9 @@ export default function AppReducer(state: AppState, action: AllActions) {
   const newState = { ...state };
 
   switch (action.event) {
+    case MainframeEvent.numeronym:
+      newState.numeronymMode = action.data.isActive;
+      return { ...newState };
     case MainframeEvent.timeoutUser:
       const __filteredChatMessages = newState.chatMessages.filter(
         (message: ChatMessageData) => message.userId !== action.data.userId,

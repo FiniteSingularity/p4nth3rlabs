@@ -40,6 +40,7 @@ export interface AppState {
   giveawayEntries: EnterGiveawayPacket[];
   giveawayInProgress: boolean;
   currentMood: string;
+  numeronymMode: boolean;
 }
 
 interface AppContextProps {
