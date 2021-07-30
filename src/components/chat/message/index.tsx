@@ -42,6 +42,18 @@ export default function Message(props: MessageProps) {
     backgroundImage = "/assets/special/catshake.gif";
   }
 
+  if (displayName === "lucecarter") {
+    backgroundImage = "/assets/special/soup.gif";
+  }
+
+  if (displayName === "hectahertz") {
+    backgroundImage = "/assets/special/birb.gif";
+  }
+
+  if (displayName === "tdrayson") {
+    backgroundImage = "/assets/special/blob.gif";
+  }
+
   return (
     <ChatMessage
       isSubscriber={isSubscriber}
