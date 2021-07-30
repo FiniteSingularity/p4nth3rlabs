@@ -39,7 +39,7 @@ export default function Message(props: MessageProps) {
   let backgroundImage = logoUrl === "" ? getRandomPantherImgUrl() : logoUrl;
 
   if (displayName === "stefanjudis") {
-    backgroundImage = "/assets/special/dancing_baby.gif";
+    backgroundImage = "/assets/special/catshake.gif";
   }
 
   return (
