@@ -9,8 +9,12 @@ export default function Backseat(props: BackseatProps) {
   const { currentBackseater } = state;
 
   return (
-    <ImageContainer>
-      <img alt="currentBackseater" src={currentBackseater} />
-    </ImageContainer>
+    <>
+      {currentBackseater !== "" && (
+        <ImageContainer>
+          <img alt="currentBackseater" src={currentBackseater} />
+        </ImageContainer>
+      )}
+    </>
   );
 }
