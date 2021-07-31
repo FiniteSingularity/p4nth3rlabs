@@ -7,6 +7,10 @@ export default function AppReducer(state: AppState, action: AllActions) {
   const newState = { ...state };
 
   switch (action.event) {
+    case MainframeEvent.backseat:
+      newState.currentBackseater = action.data.imageUrl;
+
+      return { ...newState };
     case MainframeEvent.numeronym:
       newState.numeronymMode = action.data.isActive;
       return { ...newState };

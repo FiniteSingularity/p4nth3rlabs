@@ -8,6 +8,7 @@ import Alerts from "./components/alerts";
 import Overlay from "./components/overlay";
 import Webcam from "./components/webcam";
 import Giveaway from "./components/giveaway";
+import Backseat from "./components/backseat";
 import BattleSnake from "./components/battlesnake";
 import { GlobalStyle } from "./styles";
 import { WebSocketPacket, CurrentMoods } from "@whitep4nth3r/p4nth3rb0t-types";
@@ -45,6 +46,7 @@ function App(props: AppProps) {
     giveawayInProgress: false,
     currentMood: CurrentMoods.Majick,
     numeronymMode: false,
+    currentBackseater: "",
   };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);
@@ -72,6 +74,9 @@ function App(props: AppProps) {
           </Route>
           <Route path="/giveaway">
             <Giveaway />
+          </Route>
+          <Route path="/backseat">
+            <Backseat />
           </Route>
         </Switch>
       </Router>

@@ -2199,10 +2199,10 @@
   resolved "https://registry.yarnpkg.com/@whitep4nth3r/numeronym-all-the-things/-/numeronym-all-the-things-1.0.2.tgz#d38de568c0335eb122c3374a98297f5dffb2ef03"
   integrity sha512-mtL9wqqZG94hDTmStZPZN+cQXlEAUoFf5BMaI91n3u4VD9W5XZjWRefOu203S04/eoDI7Kr8X2QEyjfUzaqnRQ==
 
-"@whitep4nth3r/p4nth3rb0t-types@^1.0.14":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@whitep4nth3r/p4nth3rb0t-types/-/p4nth3rb0t-types-1.0.14.tgz#cea93122436c28573fcb592fc9970963a3e545c6"
-  integrity sha512-a4/IYQDp2ERMr44mkTdsGbo5c/oC245N1FyaNQI76qAGM9UZC+R6xfXHCCh8OWzgiRZMetjtPjRec3CZ0lFoWQ==
+"@whitep4nth3r/p4nth3rb0t-types@^1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@whitep4nth3r/p4nth3rb0t-types/-/p4nth3rb0t-types-1.0.15.tgz#d75cf01d5e42fab92bb1f71cdfe9e52531fcaba5"
+  integrity sha512-FEDHPXLac2S2Tc7SRbd5hvi1iv9Pf/9qjuRSQr3oK8yKsFB4GZIjogY2mJvYn/95ovdahLw0DyBudMDwP4CQMg==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"

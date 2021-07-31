@@ -41,6 +41,7 @@ export interface AppState {
   giveawayInProgress: boolean;
   currentMood: string;
   numeronymMode: boolean;
+  currentBackseater: string;
 }
 
 interface AppContextProps {
