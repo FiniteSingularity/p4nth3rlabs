@@ -3,6 +3,16 @@ import sanitizeHtml from "sanitize-html";
 import { ChatMessageData } from "@whitep4nth3r/p4nth3rb0t-types";
 import { makeNumeronym } from "@whitep4nth3r/numeronym-all-the-things";
 
+// my channel badges
+// https://badges.twitch.tv/v1/badges/channels/469006291/display?language=en
+
+export const globalChatBadges = {
+  broadcaster: "https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/2",
+  partner: "https://static-cdn.jtvnw.net/badges/v1/d12a2e27-16f6-41d0-ab77-b780518f00a3/2",
+  vip: "https://static-cdn.jtvnw.net/badges/v1/b817aba4-fad8-49e2-b88a-7cc744dfa6ec/2",
+  mod: "https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/2",
+};
+
 export const getTeamMemberIconUrl = (isTeamMember: boolean): string => {
   const teamMemberIconUrls = [
     "https://static-cdn.jtvnw.net/emoticons/v2/302880696/default/dark/3.0",

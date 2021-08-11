@@ -10,6 +10,7 @@ import {
 } from "./index.style";
 import { processChat } from "./utils";
 import { getRandomPantherImgUrl } from "../../../utils";
+import Badges from "./badges";
 
 interface MessageProps {
   message: ChatMessageData;
@@ -22,12 +23,12 @@ export default function Message(props: MessageProps) {
   const {
     displayName,
     logoUrl,
-    isMod,
-    isVip,
-    isSubscriber,
     isBroadcaster,
+    isVip,
+    isPartner,
+    isMod,
+    isSubscriber,
     isTeamMember,
-    isMyFavoriteStreamer,
     teamMemberIconUrl,
   } = message;
 
@@ -60,11 +61,14 @@ export default function Message(props: MessageProps) {
       isBroadcaster={isBroadcaster}
       isVip={isVip}
       isMod={isMod}
+      isPartner={isPartner}
       isTeamMember={isTeamMember}
-      isMyFavoriteStreamer={isMyFavoriteStreamer}
       teamMemberIconUrl={teamMemberIconUrl ?? ""}
     >
-      <AvatarContainer backgroundImage={backgroundImage} />
+      <AvatarContainer backgroundImage={backgroundImage}>
+        <Badges isBroadcaster={isBroadcaster} isVip={isVip} isMod={isMod} isPartner={isPartner} />
+      </AvatarContainer>
+
       <MessageContainer>
         <DisplayName
           className={!isDefault ? `background-clip-text-hack` : ``}
@@ -73,7 +77,7 @@ export default function Message(props: MessageProps) {
           isVip={isVip}
           isMod={isMod}
           isTeamMember={isTeamMember}
-          isMyFavoriteStreamer={isMyFavoriteStreamer}
+          isPartner={isPartner}
           teamMemberIconUrl={teamMemberIconUrl ?? ""}
         >
           @{displayName}
