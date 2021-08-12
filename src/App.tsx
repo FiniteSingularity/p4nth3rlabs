@@ -8,7 +8,10 @@ import Alerts from "./components/alerts";
 import Overlay from "./components/overlay";
 import Webcam from "./components/webcam";
 import Giveaway from "./components/giveaway";
-import Backseat from "./components/backseat";
+import BackseatAvatar from "./components/backseat/avatar";
+import CarFront from "./components/backseat/car/front";
+import CarSeat from "./components/backseat/car/seat";
+import CarBack from "./components/backseat/car/back";
 import BattleSnake from "./components/battlesnake";
 import { GlobalStyle } from "./styles";
 import { WebSocketPacket, CurrentMoods } from "@whitep4nth3r/p4nth3rb0t-types";
@@ -75,8 +78,17 @@ function App(props: AppProps) {
           <Route path="/giveaway">
             <Giveaway />
           </Route>
-          <Route path="/backseat">
-            <Backseat />
+          <Route path="/backseat/avatar">
+            <BackseatAvatar />
+          </Route>
+          <Route path="/backseat/car/front">
+            <CarFront />
+          </Route>
+          <Route path="/backseat/car/seat">
+            <CarSeat />
+          </Route>
+          <Route path="/backseat/car/back">
+            <CarBack />
           </Route>
         </Switch>
       </Router>
