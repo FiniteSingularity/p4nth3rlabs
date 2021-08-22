@@ -8,6 +8,7 @@ import Cool from "./svg/Cool";
 import Dolla from "./svg/Dolla";
 import Fire from "./svg/Fire";
 import Heart from "./svg/Heart";
+import Hype from "./svg/Hype";
 import Majick from "./svg/Majick";
 import PewPew from "./svg/PewPew";
 import Rap from "./svg/Rap";
@@ -29,6 +30,8 @@ function getPantherSvg(mood: string) {
       return <Fire />;
     case CurrentMoods.Heart:
       return <Heart />;
+    case CurrentMoods.Hype:
+      return <Hype />;
     case CurrentMoods.Majick:
       return <Majick />;
     case CurrentMoods.PewPew:
@@ -60,6 +63,8 @@ function getAlertAudioUrl(mood: string) {
       return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_FIRE;
     case CurrentMoods.Heart:
       return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_HEART;
+    case CurrentMoods.Hype:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_HYPE;
     case CurrentMoods.Majick:
       return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_MAJICK;
     case CurrentMoods.PewPew:

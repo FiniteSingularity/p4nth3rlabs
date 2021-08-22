@@ -1,4 +1,15 @@
-const panthers = ["rap", "coffee", "tattoo", "cool", "fire", "heart", "majick", "pewpew", "star"];
+const panthers = [
+  "rap",
+  "coffee",
+  "tattoo",
+  "cool",
+  "fire",
+  "heart",
+  "hype",
+  "majick",
+  "pewpew",
+  "star",
+];
 
 export const getRandomPantherImgUrl = (): string => {
   const newRandomPanther = panthers[Math.floor(Math.random() * panthers.length)];
