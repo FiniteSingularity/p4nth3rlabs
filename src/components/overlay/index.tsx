@@ -7,6 +7,8 @@ import {
   HeartPantherContainer,
   MajickPantherContainer,
   PewPewPantherContainer,
+  PantherMothContainer,
+  RapPantherContainer,
 } from "./index.style";
 
 import HeartPanther from "./svg/HeartPanther";
@@ -16,6 +18,8 @@ import PewCoin from "./svg/PewCoin";
 import Fire from "./svg/Fire";
 import Lightening from "./svg/Lightening";
 import ExtraStars from "./svg/ExtraStars";
+import PantherMoth from "./svg/PantherMoth";
+import RapPanther from "./svg/RapPanther";
 
 import CtaBanner from "./CtaBanner";
 import CurrentMood from "./CurrentMood";
@@ -85,6 +89,36 @@ export default function Overlay(props: OverlayProps) {
       >
         <PewPewPanther />
       </PewPewPantherContainer>
+
+      <RapPantherContainer
+        animate={{
+          rotate: [-10, -10, -10],
+          y: [-2, 2, -2],
+        }}
+        transition={{
+          duration: 4,
+          ease: "easeInOut",
+          times: [0, 0.5, 1],
+          loop: Infinity,
+        }}
+      >
+        <RapPanther />
+      </RapPantherContainer>
+
+      <PantherMothContainer
+        animate={{
+          rotate: [10, 10, 10],
+          y: [2, -4, 2],
+        }}
+        transition={{
+          duration: 4,
+          ease: "easeInOut",
+          times: [0, 0.5, 1],
+          loop: Infinity,
+        }}
+      >
+        <PantherMoth />
+      </PantherMothContainer>
 
       <CtaBanner />
       <CurrentMood />

@@ -111,6 +111,34 @@ const PewPewPantherContainer = styled(motion.span)`
   }
 `;
 
+const PantherMothContainer = styled(motion.span)`
+  position: absolute;
+  display: inline-block;
+  width: 234px;
+  height: 130px;
+  left: 450px;
+  top: 960px;
+  transform: rotate(10deg);
+
+  svg {
+    ${svgDropShadow}
+  }
+`;
+
+const RapPantherContainer = styled(motion.span)`
+  position: absolute;
+  display: inline-block;
+  width: 180px;
+  height: 110px;
+  left: 365px;
+  top: 960px;
+  transform: rotate(-10deg);
+
+  svg {
+    ${svgDropShadow}
+  }
+`;
+
 export {
   FooterContainer,
   FireIconContainer,
@@ -120,4 +148,6 @@ export {
   HeartPantherContainer,
   MajickPantherContainer,
   PewPewPantherContainer,
+  PantherMothContainer,
+  RapPantherContainer,
 };
