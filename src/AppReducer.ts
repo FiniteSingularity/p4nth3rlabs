@@ -7,6 +7,9 @@ export default function AppReducer(state: AppState, action: AllActions) {
   const newState = { ...state };
 
   switch (action.event) {
+    case MainframeEvent.freeze:
+      newState.chatMessages = [];
+      return { ...newState };
     case MainframeEvent.backseat:
       newState.currentBackseater = action.data.imageUrl;
 

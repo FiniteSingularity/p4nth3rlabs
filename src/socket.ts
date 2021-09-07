@@ -67,6 +67,7 @@ export default class Socket {
       timeoutUser: new Set(),
       numeronym: new Set(),
       backseat: new Set(),
+      freeze: new Set(),
     };
   }
 
