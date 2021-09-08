@@ -59,6 +59,10 @@ export default function Message(props: MessageProps) {
     backgroundImage = "/assets/special/shoes.gif";
   }
 
+  if (displayName === "DR_DinoMight") {
+    backgroundImage = "/assets/special/dr_dinomight.gif";
+  }
+
   return (
     <ChatMessage
       isSubscriber={isSubscriber}
