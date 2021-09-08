@@ -55,7 +55,7 @@ export default function Message(props: MessageProps) {
     backgroundImage = "/assets/special/blob.gif";
   }
 
-  if (displayName === "matty_twoshoes") {
+  if (displayName === "Matty_TwoShoes") {
     backgroundImage = "/assets/special/shoes.gif";
   }
 
