@@ -8,12 +8,6 @@ export default function CarBack(props: CarBackProps) {
   const { currentBackseater } = state;
 
   return (
-    <>
-      {currentBackseater !== "" && (
-        <>
-          {currentBackseater !== "" && <img alt="carSeat" src="/assets/special/car/car-back.png" />}
-        </>
-      )}
-    </>
+    <>{currentBackseater !== "" && <img alt="carSeat" src="/assets/special/car/car-back.png" />}</>
   );
 }
