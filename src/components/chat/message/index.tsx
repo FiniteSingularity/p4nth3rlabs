@@ -52,7 +52,7 @@ export default function Message(props: MessageProps) {
   }
 
   if (displayName === "tdrayson") {
-    backgroundImage = "/assets/special/blob.gif";
+    backgroundImage = "/assets/special/tdrayson.gif";
   }
 
   if (displayName === "Matty_TwoShoes") {
