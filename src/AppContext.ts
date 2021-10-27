@@ -11,6 +11,7 @@ import {
   SubPacket,
   WebSocketPacket,
   ShoutOutPacket,
+  TeamMemberForOverlay,
 } from "@whitep4nth3r/p4nth3rb0t-types";
 import { createContext, Dispatch } from "react";
 
@@ -32,7 +33,12 @@ export interface AlertCompleteAction {
   id: "alert_complete";
 }
 
-export type AllActions = WebSocketPacket | AlertCompleteAction;
+export interface RemoveClawShoutOutAction {
+  event: "remove_clawshoutout";
+  id: "remove_clawshoutout";
+}
+
+export type AllActions = WebSocketPacket | AlertCompleteAction | RemoveClawShoutOutAction;
 
 export interface AppState {
   chatMessages: ChatMessageData[];
@@ -42,6 +48,8 @@ export interface AppState {
   currentMood: string;
   numeronymMode: boolean;
   currentBackseater: string;
+  clawShoutOut: boolean;
+  clawShoutOutData: TeamMemberForOverlay[];
 }
 
 interface AppContextProps {

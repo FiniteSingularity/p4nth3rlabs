@@ -65,6 +65,7 @@ export default class Socket {
       timer: new Set(),
       banUser: new Set(),
       timeoutUser: new Set(),
+      theClaw: new Set(),
       numeronym: new Set(),
       backseat: new Set(),
       freeze: new Set(),

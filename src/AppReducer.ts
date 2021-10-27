@@ -7,6 +7,13 @@ export default function AppReducer(state: AppState, action: AllActions) {
   const newState = { ...state };
 
   switch (action.event) {
+    case MainframeEvent.theClaw:
+      newState.clawShoutOut = true;
+      newState.clawShoutOutData = action.data.teamMembers;
+      return { ...newState };
+    case "remove_clawshoutout":
+      newState.clawShoutOut = false;
+      return { ...newState };
     case MainframeEvent.freeze:
       newState.chatMessages = [];
       return { ...newState };

@@ -8,6 +8,7 @@ import Alerts from "./components/alerts";
 import Overlay from "./components/overlay";
 import Webcam from "./components/webcam";
 import Giveaway from "./components/giveaway";
+import TheClaw from "./components/theclaw";
 import BackseatAvatar from "./components/backseat/avatar";
 import CarFront from "./components/backseat/car/front";
 import CarSeat from "./components/backseat/car/seat";
@@ -50,6 +51,8 @@ function App(props: AppProps) {
     currentMood: CurrentMoods.Majick,
     numeronymMode: false,
     currentBackseater: "",
+    clawShoutOut: false,
+    clawShoutOutData: [],
   };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);
@@ -77,6 +80,9 @@ function App(props: AppProps) {
           </Route>
           <Route path="/giveaway">
             <Giveaway />
+          </Route>
+          <Route path="/theclaw">
+            <TheClaw dispatch={dispatch} />
           </Route>
           <Route path="/backseat/avatar">
             <BackseatAvatar />
