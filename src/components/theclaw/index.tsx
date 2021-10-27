@@ -28,6 +28,9 @@ export default function TheClaw(props: TheClawProps) {
     <>
       {clawShoutOut && clawShoutOutData.length > 0 && (
         <Container>
+          <audio autoPlay>
+            <source src={process.env.REACT_APP_AUDIO_ALERT_SHOUTOUT} type="audio/mp3" />
+          </audio>
           {clawShoutOutData.map((member) => (
             <ImageContainer
               key={member.displayName}
