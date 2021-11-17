@@ -12,6 +12,11 @@ export default function TheClaw(props: TheClawProps) {
   const { clawShoutOut, clawShoutOutData } = state;
   const { dispatch } = props;
 
+  // temporarily remove whitep4nth3r from the members so we have an even grid :P
+  const teamMembersToShow = clawShoutOutData.filter(
+    (member) => member.displayName !== "whitep4nth3r",
+  );
+
   useEffect(() => {
     if (clawShoutOut && clawShoutOutData.length > 0) {
       setTimeout(
@@ -31,7 +36,7 @@ export default function TheClaw(props: TheClawProps) {
           <audio autoPlay>
             <source src={process.env.REACT_APP_AUDIO_ALERT_SHOUTOUT} type="audio/mp3" />
           </audio>
-          {clawShoutOutData.map((member) => (
+          {teamMembersToShow.map((member) => (
             <ImageContainer
               key={member.displayName}
               animate={{
