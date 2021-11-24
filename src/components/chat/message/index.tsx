@@ -7,6 +7,7 @@ import {
   MessageText,
   AvatarContainer,
   MessageContainer,
+  NumeronymIndicator,
 } from "./index.style";
 import { processChat } from "./utils";
 import { getRandomPantherImgUrl } from "../../../utils";
@@ -18,6 +19,7 @@ interface MessageProps {
 
 export default function Message(props: MessageProps) {
   const { state } = useContext(AppContext);
+  const { numeronymMode } = state;
 
   const { message } = props;
   const {
@@ -32,7 +34,7 @@ export default function Message(props: MessageProps) {
     teamMemberIconUrl,
   } = message;
 
-  const processedChat = processChat(message, state.numeronymMode);
+  const processedChat = processChat(message, numeronymMode);
   const startsWithTag = processedChat.message.startsWith('<span class="tag">');
   const isAction: boolean = processedChat.type === "action";
 
@@ -74,6 +76,7 @@ export default function Message(props: MessageProps) {
       teamMemberIconUrl={teamMemberIconUrl ?? ""}
     >
       <AvatarContainer backgroundImage={backgroundImage}>
+        {numeronymMode && <NumeronymIndicator>n7m!!1</NumeronymIndicator>}
         <Badges isBroadcaster={isBroadcaster} isVip={isVip} isMod={isMod} isPartner={isPartner} />
       </AvatarContainer>
 

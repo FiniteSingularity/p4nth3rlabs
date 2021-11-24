@@ -176,6 +176,7 @@ const AvatarContainer = styled.div<AvatarContainerProps>`
   background-position-y: 50%;
   background-image: ${(props) => `url(${props.backgroundImage})`};
   background-color: var(--black);
+  position: relative;
 `;
 
 const MessageContainer = styled.div`
@@ -183,4 +184,25 @@ const MessageContainer = styled.div`
   width: 100%;
 `;
 
-export { ChatMessage, DisplayName, MessageText, AvatarContainer, MessageContainer };
+const NumeronymIndicator = styled.span`
+  position: absolute;
+  box-sizing: border-box;
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-bold);
+  text-shadow: 2px 2px #000000;
+  background-color: var(--red);
+  padding: 0.25rem;
+  box-shadow: 1px 1px 4px #000000;
+  width: 100%;
+  text-align: center;
+`;
+
+export {
+  ChatMessage,
+  DisplayName,
+  MessageText,
+  AvatarContainer,
+  MessageContainer,
+  NumeronymIndicator,
+};
