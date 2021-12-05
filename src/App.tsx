@@ -14,6 +14,7 @@ import CarFront from "./components/backseat/car/front";
 import CarSeat from "./components/backseat/car/seat";
 import CarBack from "./components/backseat/car/back";
 import BattleSnake from "./components/battlesnake";
+import SpecialAnnouncement from "./components/SpecialAnnouncement";
 import { GlobalStyle } from "./styles";
 import { WebSocketPacket, CurrentMoods } from "@whitep4nth3r/p4nth3rb0t-types";
 
@@ -95,6 +96,9 @@ function App(props: AppProps) {
           </Route>
           <Route path="/backseat/car/back">
             <CarBack />
+          </Route>
+          <Route path="/special-announcement">
+            <SpecialAnnouncement />
           </Route>
         </Switch>
       </Router>
