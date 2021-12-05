@@ -7,6 +7,11 @@ export default function AppReducer(state: AppState, action: AllActions) {
   const newState = { ...state };
 
   switch (action.event) {
+    case MainframeEvent.special:
+      if (!newState.alerts.some((alert) => alert.id === action.id)) {
+        newState.alerts.push(action);
+      }
+      return { ...newState };
     case MainframeEvent.theClaw:
       newState.clawShoutOut = true;
       newState.clawShoutOutData = action.data.teamMembers;
@@ -19,7 +24,6 @@ export default function AppReducer(state: AppState, action: AllActions) {
       return { ...newState };
     case MainframeEvent.backseat:
       newState.currentBackseater = action.data.imageUrl;
-
       return { ...newState };
     case MainframeEvent.numeronym:
       newState.numeronymMode = action.data.isActive;

@@ -69,6 +69,7 @@ export default class Socket {
       numeronym: new Set(),
       backseat: new Set(),
       freeze: new Set(),
+      special: new Set(),
     };
   }
 

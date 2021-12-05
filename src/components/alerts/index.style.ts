@@ -151,6 +151,7 @@ function getAlertContainerBackgroundCss(alertType: MainframeEvent): any {
     case MainframeEvent.raid:
     case MainframeEvent.shoutOut:
     case MainframeEvent.drawGiveaway:
+    case MainframeEvent.special:
       color = "black";
       break;
     case MainframeEvent.cheer:

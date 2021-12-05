@@ -58,6 +58,13 @@ function getBannerText(alert: AlertQueueEvent): any {
         imgAlt: "p4nth3rb0t",
         logoUrl: getRandomPantherImgUrlLarge(),
       };
+    case MainframeEvent.special:
+      return {
+        banner: "Announcement",
+        footer: "I'm joining the DX team at Netlify!",
+        imgAlt: "netlify logo",
+        logoUrl: "./assets/special/netlify_logo.png",
+      };
     case MainframeEvent.announceGiveaway:
       return {
         banner: "!win !win !win",
@@ -129,6 +136,7 @@ function getAlertAudioUrl(type: MainframeEvent) {
     case MainframeEvent.follow:
       return process.env.REACT_APP_AUDIO_ALERT_FOLLOW_URL;
     case MainframeEvent.raid:
+    case MainframeEvent.special:
       return process.env.REACT_APP_AUDIO_ALERT_RAID_URL;
     case MainframeEvent.cheer:
       return process.env.REACT_APP_AUDIO_ALERT_CHEER_URL;
