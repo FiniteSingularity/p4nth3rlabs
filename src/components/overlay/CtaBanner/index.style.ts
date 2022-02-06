@@ -7,7 +7,7 @@ interface TextBoxProps {
 const textBoxWidths = {
   github: "400px",
   twitter: "276px",
-  discord: "380px",
+  discord: "374px",
   slogan: "432px",
   merch: "304px",
 };

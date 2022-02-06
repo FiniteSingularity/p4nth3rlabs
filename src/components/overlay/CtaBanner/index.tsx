@@ -18,12 +18,12 @@ const textBoxOptions: TextBoxOption[] = [
     type: "slogan",
   },
   {
-    text: "!twitter - @whitep4nth3r",
+    text: "tweet me @whitep4nth3r",
     iconName: "twitter",
     type: "twitter",
   },
   {
-    text: "!discord - Join our Discord community",
+    text: "come and chat @ discord.gg/theclaw",
     iconName: "discord",
     type: "discord",
   },
