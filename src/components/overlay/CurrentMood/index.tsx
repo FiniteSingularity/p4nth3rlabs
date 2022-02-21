@@ -13,6 +13,7 @@ import Majick from "./svg/Majick";
 import PewPew from "./svg/PewPew";
 import Rap from "./svg/Rap";
 import Sad from "./svg/Sad";
+import Scam from "./svg/Scam";
 import Star from "./svg/Star";
 import Tattoo from "./svg/Tattoo";
 import Troll from "./svg/Troll";
@@ -42,6 +43,8 @@ function getPantherSvg(mood: string) {
       return <Sad />;
     case CurrentMoods.Star:
       return <Star />;
+    case CurrentMoods.Scam:
+      return <Scam />;
     case CurrentMoods.Tattoo:
       return <Tattoo />;
     case CurrentMoods.Troll:
@@ -73,6 +76,8 @@ function getAlertAudioUrl(mood: string) {
       return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_RAP;
     case CurrentMoods.Sad:
       return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_SAD;
+    case CurrentMoods.Scam:
+      return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_SCAM;
     case CurrentMoods.Star:
       return process.env.REACT_APP_AUDIO_CURRENT_MOOD_URL_STAR;
     case CurrentMoods.Tattoo:
