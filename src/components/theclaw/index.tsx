@@ -22,9 +22,14 @@ function getCircles(outerRadius: number, targetCircles: number, centerX = 960, c
     }
     circleLocations = [
       ...circleLocations,
-      ...getRing(curOuterRadius, numCircles, centerX, centerY),
+      ...getRing(curOuterRadius, innerRadius, numCircles, centerX, centerY),
     ];
     curOuterRadius -= innerRadius * 2;
+  }
+  // Shuffle the array of locations
+  for (let i = circleLocations.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [circleLocations[i], circleLocations[j]] = [circleLocations[j], circleLocations[i]];
   }
   return {
     circleRadius: innerRadius,
@@ -32,7 +37,13 @@ function getCircles(outerRadius: number, targetCircles: number, centerX = 960, c
   };
 }
 
-function getRing(ringRadius: number, numCircles: number, centerX: number, centerY: number) {
+function getRing(
+  ringRadius: number,
+  circleRadius: number,
+  numCircles: number,
+  centerX: number,
+  centerY: number,
+) {
   const deltaTheta = (Math.PI * 2.0) / numCircles;
   if (deltaTheta < 0) {
     return [];
@@ -42,8 +53,8 @@ function getRing(ringRadius: number, numCircles: number, centerX: number, center
     const locations = [];
     for (let i = 0; deltaTheta * i < 2.0 * Math.PI; i++) {
       const theta = deltaTheta * i;
-      const x = Math.cos(theta) * ringRadius + centerX;
-      const y = Math.sin(theta) * ringRadius + centerY;
+      const x = Math.cos(theta) * (ringRadius - circleRadius) + centerX;
+      const y = Math.sin(theta) * (ringRadius - circleRadius) + centerY;
       locations.push({ x, y });
     }
     return locations;
